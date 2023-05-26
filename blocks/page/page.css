@@ -1,0 +1,8 @@
+.page {
+  border: solid 2px blueviolet;
+  background: #000000;
+  max-width: 1280px;
+  min-width: 300px;
+  width: 100%;
+  overflow: hidden;
+}
