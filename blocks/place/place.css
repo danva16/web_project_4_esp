@@ -1,6 +1,5 @@
 .place {
   margin: 0;
-  border: yellow solid;
   position: relative;
   display: flex;
   flex-direction: column;
