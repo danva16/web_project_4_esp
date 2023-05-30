@@ -1,0 +1,11 @@
+.profile__data {
+  border: blue solid;
+  margin: 0;
+  display: grid;
+  grid-template-areas:
+  "name ."
+  "name button"
+  "employment employment";
+  width: max-content;
+  color: #ffffff;
+}
