@@ -1,0 +1,8 @@
+.form-popup__title {
+  border: red solid;
+  width: 100%;
+  margin: 0 auto;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 1.21;
+}
