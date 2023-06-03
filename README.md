@@ -1,16 +1,27 @@
 # Proyecto 4: Alrededor de los Estados Unidos
 
-### Descripción general
+Este proyecto es una aplicación web que muestra perfiles de usuarios y lugares de interés en los Estados Unidos. Permite editar el perfil de usuario y agregar nuevos lugares.
 
-* Figma
-* Imágenes
+## Características
 
-**Figma**
+- Visualización de perfiles de usuario con nombre y descripción.
+- Edición de perfil de usuario.
+- Visualización de lugares de interés con título e imagen.
+- Agregar nuevos lugares de interés.
+- La página es responsiva, funciona para pantallas con un máximo de ancho de ventana de 1280px y para pantallas menores a los 500px, como mínimo 320px.
 
-* [Enlace al proyecto en Figma](https://www.figma.com/file/LDMgqWesKpQkIwhOfEBuTS/WEB%2C-Sprint-5%3A-Around-The-U.S.-%7C-desktop-%2B-mobile?node-id=0%3A1)
+## Tecnologías utilizadas
 
-**Imágenes**
+- HTML
+- CSS
+- JavaScript
+## Uso
 
-A la hora de trabajar, debes optar por exportar las imágenes directamente desde Figma; te recomendamos hacerlo para practicar más. No olvides optimizarlas [aquí](https://tinypng.com/), para que tu proyecto cargue más rápido. 
+- Al hacer clic en el botón "Editar" se abrirá un popup para editar el perfil de usuario.
+- Al hacer clic en el botón "Agregar" se abrirá un formulario para agregar un nuevo lugar de interés.
+- Al hacer clic en el botón "Close" se cierra el popup.
+- Al hacer clic en el botón "Guardar" se envía el formulario.
 
-¡Esperamos que te diviertas con JavaScript!
+## Visita
+Puedes ver la página en funcionamiento aquí  [➡️](https:/danva16.github.io/web_project_4_esp/)
+
