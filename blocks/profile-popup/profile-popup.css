@@ -13,3 +13,10 @@
   height: 330px;
   padding: 35px;
 }
+
+@media screen and (max-width: 500px) {
+  .profile-popup {
+    width: 275px;
+    height: 322px;
+  }
+}
