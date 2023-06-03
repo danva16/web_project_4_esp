@@ -1,7 +1,13 @@
 .places {
-  border: skyblue solid;
   margin: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+  width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .places {
+    grid-template-columns: 1fr;
+  }
 }

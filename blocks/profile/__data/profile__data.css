@@ -1,5 +1,4 @@
 .profile__data {
-  border: blue solid;
   margin: 0;
   display: grid;
   grid-template-areas:
@@ -8,4 +7,10 @@
   "employment employment";
   width: max-content;
   color: #ffffff;
+}
+
+@media screen and (max-width: 500px) {
+  .profile__data {
+    width: 80%;
+  }
 }

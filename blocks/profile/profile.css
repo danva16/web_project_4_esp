@@ -1,9 +1,15 @@
 .profile {
-  border: red solid;
   margin: 40px 0 0;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+}
+
+@media screen and (max-width: 500px) {
+  .profile {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
