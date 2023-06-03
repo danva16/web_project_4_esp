@@ -23,5 +23,5 @@ Este proyecto es una aplicación web que muestra perfiles de usuarios y lugares 
 - Al hacer clic en el botón "Guardar" se envía el formulario.
 
 ## Visita
-Puedes ver la página en funcionamiento aquí  [➡️](https:/danva16.github.io/web_project_4_esp/)
+Puedes ver la página en funcionamiento aquí  [➡️](https://danva16.github.io/web_project_4_esp/)
 
