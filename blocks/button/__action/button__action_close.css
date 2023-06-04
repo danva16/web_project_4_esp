@@ -8,3 +8,9 @@
   background-size: cover;
   border: none;
 }
+
+@media screen and (max-width: 500px) {
+  .button__action_close {
+    right: 5px;
+  }
+}
