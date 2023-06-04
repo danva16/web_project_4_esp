@@ -34,6 +34,13 @@ function handleProfileFormSubmit(evt) {
   closePopup();
 }
 
+function closePopupOnEsc(evt) {
+  if (evt.key === 'Escape' || evt.keyCode === 27) {
+    closePopup();
+  }
+}
+
 editButton.addEventListener('click', openPopup);
 closeButton.addEventListener('click', closePopup);
 submitButton.addEventListener('click', handleProfileFormSubmit);
+document.addEventListener('keydown', closePopupOnEsc);
