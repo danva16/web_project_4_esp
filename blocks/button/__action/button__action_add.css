@@ -5,7 +5,7 @@
   background: url('../../../images/add__button.svg') center center no-repeat;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 750px) {
   .button__action_add {
     margin: 0;
     width: 100%;

@@ -1,5 +1,5 @@
 .place__image {
-  background-size: cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
   border-radius: 6% 9% 0 0;

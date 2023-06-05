@@ -9,7 +9,7 @@
   border: none;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 750px) {
   .button__action_close {
     right: 5px;
   }

@@ -14,7 +14,7 @@
   padding: 35px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 750px) {
   .profile-popup {
     width: 250px;
     height: 322px;

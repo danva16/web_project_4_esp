@@ -6,7 +6,7 @@
   height: 24px;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 750px) {
   .button__action_edit {
     margin: 0 0 0 auto;
     width: 32px;
