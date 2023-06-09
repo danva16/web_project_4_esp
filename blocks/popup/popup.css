@@ -1,4 +1,4 @@
-.profile-popup {
+.popup {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -16,7 +16,7 @@
 }
 
 @media screen and (max-width: 750px) {
-  .profile-popup {
+  .popup {
     width: 250px;
     height: 322px;
   }

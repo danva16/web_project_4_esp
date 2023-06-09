@@ -1,4 +1,4 @@
-let popup = document.querySelector('.profile-popup');
+let popup = document.querySelector('.popup');
 let editButton = document.querySelector('.button__action_edit');
 let closeButton = popup.querySelector('.button__action_close');
 let submitButton = popup.querySelector('.button__action_create');
@@ -6,20 +6,21 @@ let nameInput = popup.querySelector('input[placeholder="Nombre"]');
 let employmentInput = popup.querySelector('input[placeholder="Acerca de mí"]');
 let overlay = document.querySelector('.overlay');
 
-function openPopup() {
+function openPopupProfile() {
   let name = document.querySelector('.profile__username');
   let employment = document.querySelector('.profile__useremployment');
 
   nameInput.value = name.textContent;
   employmentInput.value = employment.textContent;
+}
 
-  overlay.classList.add('overlay_popup_active');
-  popup.classList.remove('profile-popup_mode_disabled');
+function openPopupImage() {
+
 }
 
 function closePopup() {
   overlay.classList.remove('overlay_popup_active');
-  popup.classList.add('profile-popup_mode_disabled');
+  popup.classList.add('popup_mode_disabled');
 }
 
 function handleProfileFormSubmit(evt) {
@@ -49,7 +50,17 @@ function closePopupOnEsc(evt) {
   }
 }
 
-editButton.addEventListener('click', openPopup);
+editButton.addEventListener('click', function (evt) {
+  const buttonClicked = evt.target;
+  overlay.classList.add('overlay_popup_active');
+  popup.classList.remove('popup_mode_disabled');
+  openPopupProfile();
+}
+);
+document.querySelector(".button__action_add").addEventListener('click', function () {
+  overlay.classList.add('overlay_popup_active');
+  popup.classList.remove('popup_mode_disabled');
+})
 closeButton.addEventListener('click', closePopup);
 submitButton.addEventListener('click', handleProfileFormSubmit);
 document.addEventListener('keydown', closePopupOnEsc);
