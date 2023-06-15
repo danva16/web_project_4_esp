@@ -44,12 +44,6 @@ function handleProfileFormSubmitOnEnter(evt) {
   }
 }
 
-function closePopupOnEsc(evt) {
-  if (evt.key === 'Escape' || evt.keyCode === 27) {
-    closePopup();
-  }
-}
-
 editButton.addEventListener('click', function (evt) {
   const buttonClicked = evt.target;
   overlay.classList.add('overlay_popup_active');
@@ -63,5 +57,13 @@ document.querySelector(".button__action_add").addEventListener('click', function
 })
 closeButton.addEventListener('click', closePopup);
 submitButton.addEventListener('click', handleProfileFormSubmit);
-document.addEventListener('keydown', closePopupOnEsc);
-document.addEventListener('keydown', handleProfileFormSubmitOnEnter);
+document.addEventListener('keydown', function (evt) {
+  if(evt.key === 'Escape' || evt.keyCode === 27) {
+    closePopup();
+  }
+});
+document.addEventListener('keydown', function (evt) {
+  if(evt.key === 'Enter' || evt.keyCode === 13) {
+    handleProfileFormSubmit(evt);
+  }
+});
