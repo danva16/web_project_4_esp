@@ -23,8 +23,8 @@ function openPopupProfile() {
 
 function closePopup() {
   overlay.classList.remove('overlay_popup_active');
-  popupProfile.classList.add('popup_mode_disabled');
-  popupImage.classList.add('popup_mode_disabled');
+  popupProfile.classList.remove('popup_mode_active');
+  popupImage.classList.remove('popup_mode_active');
 }
 
 function handleProfileFormSubmit(evt) {
@@ -107,9 +107,9 @@ function handleImageFormSubmit(evt) {
 
 function handleFormSubmitOnEnter(evt) {
   if (evt.key === 'Enter' || evt.keyCode === 13) {
-    if(!popupImage.classList.contains('popup_mode_disabled')) {
+    if(popupImage.classList.contains('popup_mode_active')) {
       handleImageFormSubmit(evt);
-    } else if (!popupProfile.classList.contains('popup_mode_disabled')) {
+    } else if (popupProfile.classList.contains('popup_mode_active')) {
       handleProfileFormSubmit(evt);
     }
   }
@@ -123,12 +123,12 @@ function closePopupOnEsc(evt) {
 
 editButton.addEventListener('click', function () {
   overlay.classList.add('overlay_popup_active');
-  popupProfile.classList.remove('popup_mode_disabled');
+  popupProfile.classList.add('popup_mode_active');
   openPopupProfile();
 });
 addButton.addEventListener('click', function () {
   overlay.classList.add('overlay_popup_active');
-  popupImage.classList.remove('popup_mode_disabled');
+  popupImage.classList.add('popup_mode_active');
 });
 closeButtons.forEach((button) => {
   button.addEventListener('click', closePopup);
