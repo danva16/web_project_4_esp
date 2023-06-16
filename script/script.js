@@ -49,6 +49,9 @@ function addImage(titleValue, imageValue) {
   placeElement.querySelector('.place__title').textContent = titleValue;
   const placeImage = placeElement.querySelector('.place__image');
   placeImage.setAttribute("src", imageValue);
+  placeElement.querySelector('.button__action_like').addEventListener('click', function(evt) {
+    evt.target.classList.toggle('')
+  })
   places.append(placeElement);
 }
 

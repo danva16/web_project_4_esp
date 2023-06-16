@@ -35,4 +35,5 @@
 @import url('../blocks/button/__action/button__action_trash.css');
 @import url('../blocks/button/__action/button__action_create.css');
 @import url('../blocks/button/__action/button__action_like.css');
+@import url('../blocks/button/__action/_like/button__action_like_black.css');
 
