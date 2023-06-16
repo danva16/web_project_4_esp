@@ -1,0 +1,9 @@
+.place__title_style_show {
+  width: 100%;
+  font-weight: 400;
+  font-size: 20px;
+  color: #ffffff;
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+}

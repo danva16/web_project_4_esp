@@ -48,6 +48,13 @@ function addImage(titleValue, imageValue) {
 
   placeElement.querySelector('.place__title').textContent = titleValue;
   placeElement.querySelector('.place__image').setAttribute("src", imageValue);
+  placeElement.querySelector('.place__image').addEventListener('click', function() {
+    const popupShow = `
+    <div class="popup">
+
+    </div
+    `;
+  })
   placeElement.querySelector('.button__action_like').addEventListener('click', function(evt) {
     evt.target.classList.toggle('button__action_like_black');
   });

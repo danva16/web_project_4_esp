@@ -36,4 +36,7 @@
 @import url('../blocks/button/__action/button__action_create.css');
 @import url('../blocks/button/__action/button__action_like.css');
 @import url('../blocks/button/__action/_like/button__action_like_black.css');
+@import url('../blocks/popup/_style/popup_style_show.css');
+@import url('../blocks/place/__image/_style/place__image_style_show.css');
+@import url('../blocks/place/__title/_style/place__title_style_show.css');
 
