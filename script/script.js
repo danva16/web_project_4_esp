@@ -47,8 +47,7 @@ function addImage(titleValue, imageValue) {
   const placeElement = placeTemplate.querySelector('.place').cloneNode(true);
 
   placeElement.querySelector('.place__title').textContent = titleValue;
-  const placeImage = placeElement.querySelector('.place__image');
-  placeImage.setAttribute("src", imageValue);
+  placeElement.querySelector('.place__image').setAttribute("src", imageValue);
   placeElement.querySelector('.button__action_like').addEventListener('click', function(evt) {
     evt.target.classList.toggle('button__action_like_black');
   })
@@ -95,6 +94,8 @@ function handleImageFormSubmit(evt) {
   addImage(titleValue, imageValue);
   initialCards.push({name: titleValue, link: imageValue});
   closePopup();
+  placeInput.value = '';
+  imageInput.value = '';
 }
 
 function handleFormSubmitOnEnter(evt) {
