@@ -50,7 +50,7 @@ function addImage(titleValue, imageValue) {
   const placeImage = placeElement.querySelector('.place__image');
   placeImage.setAttribute("src", imageValue);
   placeElement.querySelector('.button__action_like').addEventListener('click', function(evt) {
-    evt.target.classList.toggle('')
+    evt.target.classList.toggle('button__action_like_black');
   })
   places.append(placeElement);
 }
