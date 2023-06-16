@@ -1,10 +1,13 @@
-let popup = document.querySelector('.popup');
-let editButton = document.querySelector('.button__action_edit');
-let closeButton = popup.querySelector('.button__action_close');
-let submitButton = popup.querySelector('.button__action_create');
+const popup = document.querySelector('.popup');
+const popupProfile = document.querySelector('#profile');
+const popupImage = document.querySelector('#image');
+const editButton = document.querySelector('.button__action_edit');
+const addButton = document.querySelector('.button__action_add');
+const closeButtons = document.querySelectorAll('.button__action_close');
+const submitButton = document.querySelector('.button__action_create');
 let nameInput = popup.querySelector('input[placeholder="Nombre"]');
 let employmentInput = popup.querySelector('input[placeholder="Acerca de mí"]');
-let overlay = document.querySelector('.overlay');
+const overlay = document.querySelector('.overlay');
 
 function openPopupProfile() {
   let name = document.querySelector('.profile__username');
@@ -14,13 +17,10 @@ function openPopupProfile() {
   employmentInput.value = employment.textContent;
 }
 
-function openPopupImage() {
-
-}
-
 function closePopup() {
   overlay.classList.remove('overlay_popup_active');
-  popup.classList.add('popup_mode_disabled');
+  popupProfile.classList.add('popup_mode_disabled');
+  popupImage.classList.add('popup_mode_disabled');
 }
 
 function handleProfileFormSubmit(evt) {
@@ -50,18 +50,18 @@ function closePopupOnEsc(evt) {
   }
 }
 
-editButton.addEventListener('click', function (evt) {
-  const buttonClicked = evt.target;
+editButton.addEventListener('click', function () {
   overlay.classList.add('overlay_popup_active');
-  popup.classList.remove('popup_mode_disabled');
+  popupProfile.classList.remove('popup_mode_disabled');
   openPopupProfile();
-}
-);
-document.querySelector(".button__action_add").addEventListener('click', function () {
+});
+addButton.addEventListener('click', function () {
   overlay.classList.add('overlay_popup_active');
-  popup.classList.remove('popup_mode_disabled');
-})
-closeButton.addEventListener('click', closePopup);
+  popupImage.classList.remove('popup_mode_disabled');
+});
+closeButtons.forEach((button) => {
+  button.addEventListener('click', closePopup);
+});
 submitButton.addEventListener('click', handleProfileFormSubmit);
 document.addEventListener('keydown', closePopupOnEsc);
 document.addEventListener('keydown', handleProfileFormSubmitOnEnter);
