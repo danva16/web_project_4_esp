@@ -8,6 +8,7 @@ const submitButton = document.querySelector('.button__action_create');
 let nameInput = popup.querySelector('input[placeholder="Nombre"]');
 let employmentInput = popup.querySelector('input[placeholder="Acerca de mí"]');
 const overlay = document.querySelector('.overlay');
+const places = document.querySelector('.places');
 
 function openPopupProfile() {
   let name = document.querySelector('.profile__username');
@@ -48,6 +49,16 @@ function closePopupOnEsc(evt) {
   if (evt.key === 'Escape' || evt.keyCode === 27) {
     closePopup();
   }
+}
+
+function addImage(titleValue, imageValue) {
+  const placeTemplate = document.querySelector('#place-template').content;
+  const placeElement = placeTemplate.querySelector('.place').cloneNode(true);
+
+  const placeImage = placeElement.querySelector('.place__image');
+  placeImage.setAttribute("src", imageValue);
+  placeElement.querySelector('.place__title').textContent = titleValue;
+  places.append(placeElement);
 }
 
 editButton.addEventListener('click', function () {
