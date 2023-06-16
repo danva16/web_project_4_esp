@@ -13,7 +13,7 @@ const placeInput = document.querySelector('input[placeholder="Título"]');
 const imageInput = document.querySelector('input[placeholder="Enlace a la imagen"]');
 const overlay = document.querySelector('.overlay');
 const places = document.querySelector('.places');
-const showImage = document.querySelector('.place__image_style_show');
+const showImage = document.querySelector('.popup__image');
 const showTitle = document.querySelector('.place__title_style_show');
 
 function openPopupProfile() {
