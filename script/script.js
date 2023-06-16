@@ -50,7 +50,14 @@ function addImage(titleValue, imageValue) {
   placeElement.querySelector('.place__image').setAttribute("src", imageValue);
   placeElement.querySelector('.button__action_like').addEventListener('click', function(evt) {
     evt.target.classList.toggle('button__action_like_black');
-  })
+  });
+  placeElement.querySelector('.button__action_trash').addEventListener('click', function() {
+    placeElement.remove();
+    const index = initialCards.findIndex(card => !(card.name === titleValue && card.link === imageValue));
+    if(index !== -1) {
+      initialCards.splice(index, 1);
+    };
+  });
   places.append(placeElement);
 }
 
@@ -96,6 +103,7 @@ function handleImageFormSubmit(evt) {
   closePopup();
   placeInput.value = '';
   imageInput.value = '';
+  console.log(initialCards);
 }
 
 function handleFormSubmitOnEnter(evt) {
