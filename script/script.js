@@ -2,9 +2,9 @@ const popup = document.querySelector('.popup');
 const popupProfile = document.querySelector('#profile');
 const popupImage = document.querySelector('#image');
 const popupShow = document.querySelector('#show');
-const editButton = document.querySelector('.button__action_edit');
-const addButton = document.querySelector('.button__action_add');
-const closeButtons = document.querySelectorAll('.button__action_close');
+const editButton = document.querySelector('.button_action_edit');
+const addButton = document.querySelector('.button_action_add');
+const closeButtons = document.querySelectorAll('.button_action_close');
 const submitButtonProfile = document.querySelector('#submit-profile');
 const submitButtonImage = document.querySelector('#submit-image');
 let nameInput = popup.querySelector('input[placeholder="Nombre"]');
@@ -59,10 +59,10 @@ function addImage(titleValue, imageValue) {
     showTitle.textContent = titleValue;
   });
 
-  placeElement.querySelector('.button__action_like').addEventListener('click', function(evt) {
-    evt.target.classList.toggle('button__action_like_black');
+  placeElement.querySelector('.button_action_like').addEventListener('click', function(evt) {
+    evt.target.classList.toggle('button_action_like--active');
   });
-  placeElement.querySelector('.button__action_trash').addEventListener('click', function() {
+  placeElement.querySelector('.button_action_trash').addEventListener('click', function() {
     placeElement.remove();
     const index = initialCards.findIndex(card => !(card.name === titleValue && card.link === imageValue));
     if(index !== -1) {

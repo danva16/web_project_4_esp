@@ -1,4 +1,4 @@
-.button__action_edit {
+.button_action_edit {
   grid-area: button;
   margin: 0 0 0 25px;
   background: url('../../../images/edit__button.svg') center center no-repeat;
@@ -7,7 +7,7 @@
 }
 
 @media screen and (max-width: 750px) {
-  .button__action_edit {
+  .button_action_edit {
     margin: 0 0 0 auto;
     width: 32px;
     height: 32px;

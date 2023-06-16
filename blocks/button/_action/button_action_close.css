@@ -1,4 +1,4 @@
-.button__action_close {
+.button_action_close {
   width: 40px;
   height: 40px;
   position: absolute;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (max-width: 750px) {
-  .button__action_close {
+  .button_action_close {
     right: 5px;
   }
 }
