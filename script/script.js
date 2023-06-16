@@ -1,6 +1,7 @@
 const popup = document.querySelector('.popup');
 const popupProfile = document.querySelector('#profile');
 const popupImage = document.querySelector('#image');
+const popupShow = document.querySelector('#show');
 const editButton = document.querySelector('.button__action_edit');
 const addButton = document.querySelector('.button__action_add');
 const closeButtons = document.querySelectorAll('.button__action_close');
@@ -12,6 +13,8 @@ const placeInput = document.querySelector('input[placeholder="Título"]');
 const imageInput = document.querySelector('input[placeholder="Enlace a la imagen"]');
 const overlay = document.querySelector('.overlay');
 const places = document.querySelector('.places');
+const showImage = document.querySelector('.place__image_style_show');
+const showTitle = document.querySelector('.place__title_style_show');
 
 function openPopupProfile() {
   let name = document.querySelector('.profile__username');
@@ -25,6 +28,7 @@ function closePopup() {
   overlay.classList.remove('overlay_popup_active');
   popupProfile.classList.remove('popup_mode_active');
   popupImage.classList.remove('popup_mode_active');
+  popupShow.classList.remove('popup_mode_active');
 }
 
 function handleProfileFormSubmit(evt) {
@@ -49,14 +53,12 @@ function addImage(titleValue, imageValue) {
   placeElement.querySelector('.place__title').textContent = titleValue;
   placeElement.querySelector('.place__image').setAttribute("src", imageValue);
   placeElement.querySelector('.place__image').addEventListener('click', function() {
-    const popupShow = `
-    <div class="popup popup_style_show">
-      <img class="place__image place__image_style_show"src="${imageValue}"></img>
-      <h2 class="place__title place__title_style_show">${titleValue}</h2>
-      <button type="button" class="button button__action_close"></button>
-    </div
-    `;
-  })
+    overlay.classList.add('overlay_popup_active');
+    popupShow.classList.add('popup_mode_active');
+    showImage.setAttribute('src', imageValue);
+    showTitle.textContent = titleValue;
+  });
+
   placeElement.querySelector('.button__action_like').addEventListener('click', function(evt) {
     evt.target.classList.toggle('button__action_like_black');
   });
