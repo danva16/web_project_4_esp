@@ -4,9 +4,12 @@ const popupImage = document.querySelector('#image');
 const editButton = document.querySelector('.button__action_edit');
 const addButton = document.querySelector('.button__action_add');
 const closeButtons = document.querySelectorAll('.button__action_close');
-const submitButton = document.querySelector('.button__action_create');
+const submitButtonProfile = document.querySelector('#submit-profile');
+const submitButtonImage = document.querySelector('#submit-image');
 let nameInput = popup.querySelector('input[placeholder="Nombre"]');
 let employmentInput = popup.querySelector('input[placeholder="Acerca de mí"]');
+const placeInput = document.querySelector('input[placeholder="Título"]');
+const imageInput = document.querySelector('input[placeholder="Enlace a la imagen"]');
 const overlay = document.querySelector('.overlay');
 const places = document.querySelector('.places');
 
@@ -39,9 +42,33 @@ function handleProfileFormSubmit(evt) {
   closePopup();
 }
 
-function handleProfileFormSubmitOnEnter(evt) {
+function addImage(titleValue, imageValue) {
+  const placeTemplate = document.querySelector('#place-template').content;
+  const placeElement = placeTemplate.querySelector('.place').cloneNode(true);
+
+  placeElement.querySelector('.place__title').textContent = titleValue;
+  const placeImage = placeElement.querySelector('.place__image');
+  placeImage.setAttribute("src", imageValue);
+  places.append(placeElement);
+}
+
+function handleImageFormSubmit(evt) {
+  evt.preventDefault();
+
+  const titleValue = placeInput.value;
+  const imageValue = imageInput.value;
+
+  addImage(titleValue, imageValue);
+  closePopup();
+}
+
+function handleFormSubmitOnEnter(evt) {
   if (evt.key === 'Enter' || evt.keyCode === 13) {
-    handleProfileFormSubmit(evt);
+    if(!popupImage.classList.contains('popup_mode_disabled')) {
+      handleImageFormSubmit(evt);
+    } else if (!popupProfile.classList.contains('popup_mode_disabled')) {
+      handleProfileFormSubmit(evt);
+    }
   }
 }
 
@@ -49,16 +76,6 @@ function closePopupOnEsc(evt) {
   if (evt.key === 'Escape' || evt.keyCode === 27) {
     closePopup();
   }
-}
-
-function addImage(titleValue, imageValue) {
-  const placeTemplate = document.querySelector('#place-template').content;
-  const placeElement = placeTemplate.querySelector('.place').cloneNode(true);
-
-  const placeImage = placeElement.querySelector('.place__image');
-  placeImage.setAttribute("src", imageValue);
-  placeElement.querySelector('.place__title').textContent = titleValue;
-  places.append(placeElement);
 }
 
 editButton.addEventListener('click', function () {
@@ -73,6 +90,7 @@ addButton.addEventListener('click', function () {
 closeButtons.forEach((button) => {
   button.addEventListener('click', closePopup);
 });
-submitButton.addEventListener('click', handleProfileFormSubmit);
+submitButtonProfile.addEventListener('click', handleProfileFormSubmit);
+submitButtonImage.addEventListener('click', handleImageFormSubmit);
 document.addEventListener('keydown', closePopupOnEsc);
-document.addEventListener('keydown', handleProfileFormSubmitOnEnter);
+document.addEventListener('keydown', handleFormSubmitOnEnter);
