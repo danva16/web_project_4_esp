@@ -103,7 +103,6 @@ function handleImageFormSubmit(evt) {
   closePopup();
   placeInput.value = '';
   imageInput.value = '';
-  console.log(initialCards);
 }
 
 function handleFormSubmitOnEnter(evt) {
