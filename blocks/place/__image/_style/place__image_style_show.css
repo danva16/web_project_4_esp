@@ -1,0 +1,7 @@
+.place__image_style_show {
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  cursor: auto;
+}
