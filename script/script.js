@@ -50,8 +50,10 @@ function addImage(titleValue, imageValue) {
   placeElement.querySelector('.place__image').setAttribute("src", imageValue);
   placeElement.querySelector('.place__image').addEventListener('click', function() {
     const popupShow = `
-    <div class="popup">
-
+    <div class="popup popup_style_show">
+      <img class="place__image place__image_style_show"src="${imageValue}"></img>
+      <h2 class="place__title place__title_style_show">${titleValue}</h2>
+      <button type="button" class="button button__action_close"></button>
     </div
     `;
   })
