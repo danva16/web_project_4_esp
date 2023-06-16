@@ -14,7 +14,7 @@ const imageInput = document.querySelector('input[placeholder="Enlace a la imagen
 const overlay = document.querySelector('.overlay');
 const places = document.querySelector('.places');
 const showImage = document.querySelector('.popup__image');
-const showTitle = document.querySelector('.place__title_style_show');
+const showTitle = document.querySelector('.popup__title_style_show');
 
 function openPopupProfile() {
   let name = document.querySelector('.profile__username');
