@@ -7,8 +7,8 @@ const addButton = document.querySelector('.button_action_add');
 const closeButtons = document.querySelectorAll('.button_action_close');
 const submitButtonProfile = document.querySelector('#submit-profile');
 const submitButtonImage = document.querySelector('#submit-image');
-let nameInput = popup.querySelector('input[placeholder="Nombre"]');
-let employmentInput = popup.querySelector('input[placeholder="Acerca de mí"]');
+const nameInput = popup.querySelector('input[placeholder="Nombre"]');
+const employmentInput = popup.querySelector('input[placeholder="Acerca de mí"]');
 const placeInput = document.querySelector('input[placeholder="Título"]');
 const imageInput = document.querySelector('input[placeholder="Enlace a la imagen"]');
 const overlay = document.querySelector('.overlay');
@@ -17,8 +17,8 @@ const showImage = document.querySelector('.popup__image');
 const showTitle = document.querySelector('.popup__title_style_show');
 
 function openPopupProfile() {
-  let name = document.querySelector('.profile__username');
-  let employment = document.querySelector('.profile__useremployment');
+  const name = document.querySelector('.profile__username');
+  const employment = document.querySelector('.profile__useremployment');
 
   nameInput.value = name.textContent;
   employmentInput.value = employment.textContent;
@@ -34,11 +34,11 @@ function closePopup() {
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
 
-  let nameOutput = document.querySelector('.profile__username');
-  let employmentOutput = document.querySelector('.profile__useremployment');
+  const nameOutput = document.querySelector('.profile__username');
+  const employmentOutput = document.querySelector('.profile__useremployment');
 
-  let nameValue = nameInput.value;
-  let employmentValue = employmentInput.value;
+  const nameValue = nameInput.value;
+  const employmentValue = employmentInput.value;
 
   nameOutput.textContent = nameValue;
   employmentOutput.textContent = employmentValue;
