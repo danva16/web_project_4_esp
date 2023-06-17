@@ -71,7 +71,7 @@ function addImage(titleValue, imageValue) {
       initialCards.splice(index, 1);
     };
   });
-  places.append(placeElement);
+  places.prepend(placeElement);
 }
 
 const initialCards = [
