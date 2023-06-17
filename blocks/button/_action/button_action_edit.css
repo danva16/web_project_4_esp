@@ -1,6 +1,6 @@
 .button_action_edit {
   grid-area: button;
-  margin: 0 0 0 25px;
+  margin: 0;
   background: url('../../../images/edit__button.svg') center center no-repeat;
   width: 24px;
   height: 24px;
