@@ -6,4 +6,7 @@
   position: absolute;
   left: 0;
   bottom: -40px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
