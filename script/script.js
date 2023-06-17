@@ -52,10 +52,12 @@ function addImage(titleValue, imageValue) {
 
   placeElement.querySelector('.place__title').textContent = titleValue;
   placeElement.querySelector('.place__image').setAttribute("src", imageValue);
+  placeElement.querySelector('.place__image').setAttribute("alt", titleValue);
   placeElement.querySelector('.place__image').addEventListener('click', function() {
     overlay.classList.add('overlay_popup_active');
     popupShow.classList.add('popup_mode_active');
     showImage.setAttribute('src', imageValue);
+    showImage.setAttribute('alt', titleValue);
     showTitle.textContent = titleValue;
   });
 
