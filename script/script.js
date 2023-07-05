@@ -2,7 +2,6 @@ const popup = document.querySelector('.popup');
 const form = document.querySelector('.form');
 const formProfile = form.querySelector('#profile');
 const formImage = form.querySelector('#image');
-const popupShow = document.querySelector('#show');
 const editButton = document.querySelector('.button_action_edit');
 const addButton = document.querySelector('.button_action_add');
 const closeButtons = document.querySelectorAll('.button_action_close');
@@ -14,7 +13,7 @@ const placeInput = document.querySelector('input[placeholder="Título"]');
 const imageInput = document.querySelector('input[placeholder="Enlace a la imagen"]');
 const places = document.querySelector('.places');
 const showImage = document.querySelector('.popup__image');
-const showTitle = document.querySelector('.popup__title_style_show');
+const showTitle = document.querySelector('.popup__title');
 
 function openformProfile() {
   const name = document.querySelector('.profile__username');
@@ -28,7 +27,7 @@ function closePopup() {
   form.classList.remove('form_mode_active');
   formProfile.classList.remove('form__set_mode_active');
   formImage.classList.remove('form__set_mode_active');
-  popupShow.classList.remove('form_mode_active');
+  popup.classList.remove('popup_mode_active');
 }
 
 function handleProfileFormSubmit(evt) {
@@ -55,7 +54,7 @@ function addImage(titleValue, imageValue) {
   placeElement.querySelector('.place__image').setAttribute("alt", titleValue);
   placeElement.querySelector('.place__image').addEventListener('click', function() {
     form.classList.add('form_mode_active');
-    popupShow.classList.add('popup_mode_active');
+    popup.classList.add('popup_mode_active');
     showImage.setAttribute('src', imageValue);
     showImage.setAttribute('alt', titleValue);
     showTitle.textContent = titleValue;
@@ -146,6 +145,7 @@ addButton.addEventListener('click', function () {
 closeButtons.forEach((button) => {
   button.addEventListener('click', closePopup);
 });
+
 submitButtonProfile.addEventListener('click', handleProfileFormSubmit);
 submitButtonImage.addEventListener('click', handleImageFormSubmit);
 document.addEventListener('keydown', closePopupOnEsc);

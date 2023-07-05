@@ -12,15 +12,8 @@
   align-items: center;
   background-color: #ffffff;
   border-radius: 10px;
-  width: 430px;
-  height: 330px;
-  padding: 35px;
+  width: 75vw;
+  height: 75vh;
+  padding: 0;
   transition: opacity 1.5s ease, visibility 1.5s ease;
-}
-
-@media screen and (max-width: 750px) {
-  .popup {
-    width: 250px;
-    height: 322px;
-  }
 }

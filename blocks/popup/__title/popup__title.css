@@ -1,7 +1,12 @@
 .popup__title {
   width: 100%;
-  margin: 0 auto;
-  font-weight: 900;
+  font-weight: 400;
   font-size: 30px;
-  line-height: 1.21;
+  color: #ffffff;
+  position: absolute;
+  left: 0;
+  bottom: -70px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
