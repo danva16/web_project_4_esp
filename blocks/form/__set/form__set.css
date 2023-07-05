@@ -17,3 +17,10 @@
   padding: 35px;
   transition: opacity 1.5s ease, visibility 1.5s ease;
 }
+
+@media screen and (max-width: 750px) {
+  .form__set {
+    width: 250px;
+    height: 322px;
+  }
+}

@@ -1,0 +1,7 @@
+.form__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  color: #333333;
+  width: 100%;
+}
