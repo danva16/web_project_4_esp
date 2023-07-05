@@ -1,22 +1,22 @@
 const popup = document.querySelector('.popup');
-const popupProfile = document.querySelector('#profile');
-const popupImage = document.querySelector('#image');
+const form = document.querySelector('.form');
+const formProfile = form.querySelector('#profile');
+const formImage = form.querySelector('#image');
 const popupShow = document.querySelector('#show');
 const editButton = document.querySelector('.button_action_edit');
 const addButton = document.querySelector('.button_action_add');
 const closeButtons = document.querySelectorAll('.button_action_close');
 const submitButtonProfile = document.querySelector('#submit-profile');
 const submitButtonImage = document.querySelector('#submit-image');
-const nameInput = popup.querySelector('input[placeholder="Nombre"]');
-const employmentInput = popup.querySelector('input[placeholder="Acerca de mí"]');
+const nameInput = formProfile.querySelector('input[placeholder="Nombre"]');
+const employmentInput = formProfile.querySelector('input[placeholder="Acerca de mí"]');
 const placeInput = document.querySelector('input[placeholder="Título"]');
 const imageInput = document.querySelector('input[placeholder="Enlace a la imagen"]');
-const overlay = document.querySelector('.overlay');
 const places = document.querySelector('.places');
 const showImage = document.querySelector('.popup__image');
 const showTitle = document.querySelector('.popup__title_style_show');
 
-function openPopupProfile() {
+function openformProfile() {
   const name = document.querySelector('.profile__username');
   const employment = document.querySelector('.profile__useremployment');
 
@@ -25,10 +25,10 @@ function openPopupProfile() {
 }
 
 function closePopup() {
-  overlay.classList.remove('overlay_popup_active');
-  popupProfile.classList.remove('popup_mode_active');
-  popupImage.classList.remove('popup_mode_active');
-  popupShow.classList.remove('popup_mode_active');
+  form.classList.remove('form_mode_active');
+  formProfile.classList.remove('form__set_mode_active');
+  formImage.classList.remove('form__set_mode_active');
+  popupShow.classList.remove('form_mode_active');
 }
 
 function handleProfileFormSubmit(evt) {
@@ -54,7 +54,7 @@ function addImage(titleValue, imageValue) {
   placeElement.querySelector('.place__image').setAttribute("src", imageValue);
   placeElement.querySelector('.place__image').setAttribute("alt", titleValue);
   placeElement.querySelector('.place__image').addEventListener('click', function() {
-    overlay.classList.add('overlay_popup_active');
+    form.classList.add('form_mode_active');
     popupShow.classList.add('popup_mode_active');
     showImage.setAttribute('src', imageValue);
     showImage.setAttribute('alt', titleValue);
@@ -120,9 +120,9 @@ function handleImageFormSubmit(evt) {
 
 function handleFormSubmitOnEnter(evt) {
   if (evt.key === 'Enter' || evt.keyCode === 13) {
-    if(popupImage.classList.contains('popup_mode_active')) {
+    if(formImage.classList.contains('form__set_mode_active')) {
       handleImageFormSubmit(evt);
-    } else if (popupProfile.classList.contains('popup_mode_active')) {
+    } else if (formProfile.classList.contains('form__set_mode_active')) {
       handleProfileFormSubmit(evt);
     }
   }
@@ -135,13 +135,13 @@ function closePopupOnEsc(evt) {
 }
 
 editButton.addEventListener('click', function () {
-  overlay.classList.add('overlay_popup_active');
-  popupProfile.classList.add('popup_mode_active');
-  openPopupProfile();
+  form.classList.add('form_mode_active');
+  formProfile.classList.add('form__set_mode_active');
+  openformProfile();
 });
 addButton.addEventListener('click', function () {
-  overlay.classList.add('overlay_popup_active');
-  popupImage.classList.add('popup_mode_active');
+  form.classList.add('form_mode_active');
+  formImage.classList.add('form__set_mode_active');
 });
 closeButtons.forEach((button) => {
   button.addEventListener('click', closePopup);
