@@ -35,5 +35,5 @@
 @import url('../blocks/form/__set/_mode/form__set_mode_active.css');
 @import url('../blocks/form/__inputs/form__inputs.css');
 @import url('../blocks/form/__input/form__input.css');
-@import url('../blocks/form/__input/form__input-error.css');
+@import url('../blocks/form/__input-error/form__input-error.css');
 @import url('../blocks/form/__title/form__title.css');
