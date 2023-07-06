@@ -148,5 +148,10 @@ closeButtons.forEach((button) => {
 
 submitButtonProfile.addEventListener('click', handleProfileFormSubmit);
 submitButtonImage.addEventListener('click', handleImageFormSubmit);
+form.addEventListener('click', function(evt) {
+  if(!formProfile.contains(evt.target) && !formImage.contains(evt.target)) {
+    closePopup();
+  }
+});
 document.addEventListener('keydown', closePopupOnEsc);
 document.addEventListener('keydown', handleFormSubmitOnEnter);
