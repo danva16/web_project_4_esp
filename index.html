@@ -55,7 +55,9 @@
         <h2 class="form__title">Editar Perfil</h2>
         <div class="form__inputs">
           <input type="text" placeholder="Nombre" id="name-input" class="form__input" required>
+          <span class="form__input-error name-input-error"></span>
           <input type="text" placeholder="Acerca de mí" id="employment-input" class="form__input" required>
+          <span class="form__input-error employment-input-error"></span>
         </div>
         <button id="submit-profile" type="submit" class=" button button_action_create">Guardar</button>
       </fieldset>
@@ -64,12 +66,14 @@
         <button type="button" class="button button_action_close"></button>
         <h2 class="form__title">Nuevo Lugar</h2>
         <div class="form__inputs">
-          <input type="text" placeholder="Título" class="form__input" required>
-          <input type="url" placeholder="Enlace a la imagen" class="form__input" required>
+          <input type="text" placeholder="Título" id="title-input" class="form__input" required>
+          <span class="form__input-error title-input-error"></span>
+          <input type="url" placeholder="Enlace a la imagen" id="image-input" class="form__input" required>
+          <span class="form__input-error image-input-error"></span>
         </div>
         <button id="submit-image" type="submit" class=" button button_action_create">Crear</button>
       </fieldset>
     </form>
-  <script src="./script/script.js"></script>
+  <script src="./script/index.js"></script>
   </body>
 </html>
