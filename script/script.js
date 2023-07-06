@@ -146,12 +146,13 @@ closeButtons.forEach((button) => {
   button.addEventListener('click', closePopup);
 });
 
-submitButtonProfile.addEventListener('click', handleProfileFormSubmit);
-submitButtonImage.addEventListener('click', handleImageFormSubmit);
 form.addEventListener('click', function(evt) {
   if(!formProfile.contains(evt.target) && !formImage.contains(evt.target)) {
     closePopup();
   }
 });
+
+submitButtonProfile.addEventListener('click', handleProfileFormSubmit);
+submitButtonImage.addEventListener('click', handleImageFormSubmit);
 document.addEventListener('keydown', closePopupOnEsc);
 document.addEventListener('keydown', handleFormSubmitOnEnter);
