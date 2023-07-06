@@ -4,4 +4,6 @@
   font-size: 12px;
   color: #ff0000;
   margin: 8px 0 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
