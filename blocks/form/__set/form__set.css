@@ -8,7 +8,6 @@
   visibility: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
   border-radius: 10px;
