@@ -1,7 +1,6 @@
 .form__inputs {
   display: flex;
   flex-direction: column;
-  color: #333333;
   width: 100%;
   margin: 90px 0 25px;
 }
