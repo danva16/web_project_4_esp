@@ -119,7 +119,7 @@ function handleImageFormSubmit(evt) {
 
 function handleFormSubmitOnEnter(evt) {
   if (evt.key === 'Enter' || evt.keyCode === 13) {
-    if(formImage.classList.contains('form__set_mode_active')) {
+    if (formImage.classList.contains('form__set_mode_active')) {
       handleImageFormSubmit(evt);
     } else if (formProfile.classList.contains('form__set_mode_active')) {
       handleProfileFormSubmit(evt);
