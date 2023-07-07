@@ -29,3 +29,23 @@ const hasInvalidInput = (inputList) => {
   })
 };
 
+const toggleButtonState = (inputList, buttonElement) => {
+  if(hasInvalidInput(inputList)) {
+    buttonElement.classList.add("button_action_create-inactive");
+  }
+  else {
+    buttonElement.classList.remove("button_action_create-inactive");
+  }
+};
+
+const setEventListeners = (formElement) => {
+  const inputList = Array.from(formElement.querySelectorAll(".form__input"));
+  const buttonElement = formElement.querySelector(".button_action_create");
+  toggleButtonState(inputList, buttonElement);
+  inputList.forEach((inputElement) => {
+    inputElement.addEventListener("input", function() {
+      checkInputValidity(formElement, inputElement);
+      toggleButtonState(inputElement, buttonElement);
+    });
+  });
+};
