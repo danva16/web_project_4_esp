@@ -160,5 +160,3 @@ form.addEventListener('click', function(evt) {
 
 submitButtonProfile.addEventListener('click', handleProfileFormSubmit);
 submitButtonImage.addEventListener('click', handleImageFormSubmit);
-/*document.addEventListener('keydown', closePopupOnEsc);
-document.addEventListener('keydown', handleFormSubmitOnEnter);*/
