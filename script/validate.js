@@ -49,3 +49,18 @@ const setEventListeners = (formElement) => {
     });
   });
 };
+
+const enableValidation = () => {
+  const form = document.querySelector(".form");
+  form.addEventListener("submit", function(evt) {
+    evt.preventDefault();
+  });
+
+  const fieldsetList = Array.from(querySelectorAll(".form__set"));
+
+  fieldsetList.forEach((fieldset) => {
+    setEventListeners(fieldset);
+  });
+};
+
+enableValidation();
