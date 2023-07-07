@@ -25,6 +25,7 @@
 @import url('../blocks/button/_action/button_action_add.css');
 @import url('../blocks/button/_action/button_action_close.css');
 @import url('../blocks/button/_action/button_action_create.css');
+@import url('../blocks/button/_action/button_action_create-inactive.css');
 @import url('../blocks/button/_action/button_action_edit.css');
 @import url('../blocks/button/_action/button_action_trash.css');
 @import url('../blocks/button/_action/button_action_like.css');
