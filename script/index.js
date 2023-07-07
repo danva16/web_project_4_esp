@@ -28,6 +28,8 @@ function closePopup() {
   formProfile.classList.remove('form__set_mode_active');
   formImage.classList.remove('form__set_mode_active');
   popup.classList.remove('popup_mode_active');
+  document.removeEventListener("keydown", handleFormSubmitOnEnter);
+  document.removeEventListener("keydown", closePopupOnEsc);
 }
 
 function handleProfileFormSubmit(evt) {
@@ -137,10 +139,14 @@ editButton.addEventListener('click', function () {
   form.classList.add('form_mode_active');
   formProfile.classList.add('form__set_mode_active');
   openformProfile();
+  document.addEventListener("keydown", handleFormSubmitOnEnter);
+  document.addEventListener("keydown", closePopupOnEsc);
 });
 addButton.addEventListener('click', function () {
   form.classList.add('form_mode_active');
   formImage.classList.add('form__set_mode_active');
+  document.addEventListener("keydown", handleFormSubmitOnEnter);
+  document.addEventListener("keydown", closePopupOnEsc);
 });
 closeButtons.forEach((button) => {
   button.addEventListener('click', closePopup);
@@ -154,5 +160,5 @@ form.addEventListener('click', function(evt) {
 
 submitButtonProfile.addEventListener('click', handleProfileFormSubmit);
 submitButtonImage.addEventListener('click', handleImageFormSubmit);
-document.addEventListener('keydown', closePopupOnEsc);
-document.addEventListener('keydown', handleFormSubmitOnEnter);
+/*document.addEventListener('keydown', closePopupOnEsc);
+document.addEventListener('keydown', handleFormSubmitOnEnter);*/
