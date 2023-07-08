@@ -1,7 +1,7 @@
 .profile__username {
   margin: 0;
   max-width: 385px;
-  width: fit-content;
+  width: 100%;
   font-weight: 500;
   font-size: 42px;
   line-height: 1.33;
