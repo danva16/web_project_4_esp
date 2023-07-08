@@ -21,6 +21,10 @@ const checkInputValidity = (formElement, inputElement) => {
   else {
     hideInputError(formElement, inputElement);
   }
+
+  const inputList = Array.from(document.querySelectorAll(".form__input"));
+  const buttonElement = formElement.querySelector(".button_action_create");
+  toggleButtonState(inputList, buttonElement);
 };
 
 const hasInvalidInput = (inputList) => {
@@ -51,10 +55,12 @@ const setEventListeners = (formElement) => {
 };
 
 const enableValidation = () => {
-  const form = document.querySelector(".form");
-  form.addEventListener("submit", function(evt) {
-    evt.preventDefault();
-  });
+  const formList = Array.from(document.querySelectorAll(".form"));
+  formList.forEach((form) => {
+    form.addEventListener("submit", function(evt) {
+      evt.preventDefault();
+    })
+  })
 
   const fieldsetList = Array.from(document.querySelectorAll(".form__set"));
 

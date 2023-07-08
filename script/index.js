@@ -43,7 +43,6 @@ function handleProfileFormSubmit(evt) {
 
   nameOutput.textContent = nameValue;
   employmentOutput.textContent = employmentValue;
-
   closePopup();
 }
 
@@ -57,6 +56,7 @@ function addImage(titleValue, imageValue) {
   placeElement.querySelector('.place__image').addEventListener('click', function() {
     form.classList.add('form_mode_active');
     popup.classList.add('popup_mode_active');
+    document.addEventListener("keydown", closePopupOnEsc);
     showImage.setAttribute('src', imageValue);
     showImage.setAttribute('alt', titleValue);
     showTitle.textContent = titleValue;
@@ -117,17 +117,21 @@ function handleImageFormSubmit(evt) {
   closePopup();
   placeInput.value = '';
   imageInput.value = '';
+  enableValidation();
 }
 
 function handleFormSubmitOnEnter(evt) {
   if (evt.key === 'Enter' || evt.keyCode === 13) {
-    if (formImage.classList.contains('form__set_mode_active')) {
+    if (formImage.classList.contains('form__set_mode_active') && !submitButtonImage.classList.contains('button_action_create-inactive')) {
       handleImageFormSubmit(evt);
-    } else if (formProfile.classList.contains('form__set_mode_active')) {
+    } else if (formProfile.classList.contains('form__set_mode_active') && !submitButtonProfile.classList.contains('button_action_create-inactive')) {
       handleProfileFormSubmit(evt);
     }
+    evt.preventDefault();
   }
 }
+
+
 
 function closePopupOnEsc(evt) {
   if (evt.key === 'Escape' || evt.keyCode === 27) {
@@ -135,7 +139,7 @@ function closePopupOnEsc(evt) {
   }
 }
 
-editButton.addEventListener('click', function () {
+editButton.addEventListener('click', function (evt) {
   form.classList.add('form_mode_active');
   formProfile.classList.add('form__set_mode_active');
   openformProfile();
@@ -148,6 +152,16 @@ addButton.addEventListener('click', function () {
   document.addEventListener("keydown", handleFormSubmitOnEnter);
   document.addEventListener("keydown", closePopupOnEsc);
 });
+
+/*const handleFormEvents = (submitButton) => {
+  if(!submitButton.classList.contains("button_action_create-inactive")) {
+    document.addEventListener("keydown", handleFormSubmitOnEnter);
+  } else {
+    document.removeEventListener("keydown", handleFormSubmitOnEnter);
+  }
+  //document.addEventListener("keydown", closePopupOnEsc);
+}*/
+
 closeButtons.forEach((button) => {
   button.addEventListener('click', closePopup);
 });
@@ -160,3 +174,5 @@ form.addEventListener('click', function(evt) {
 
 submitButtonProfile.addEventListener('click', handleProfileFormSubmit);
 submitButtonImage.addEventListener('click', handleImageFormSubmit);
+//document.addEventListener("keydown", handleFormSubmitOnEnter);
+//document.addEventListener("keydown", closePopupOnEsc);
