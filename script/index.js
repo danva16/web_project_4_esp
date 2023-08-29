@@ -1,4 +1,4 @@
-const popup = document.querySelector('.popup');
+/*const popup = document.querySelector('.popup');
 const form = document.querySelector('.form');
 const formProfile = form.querySelector('#profile');
 const formImage = form.querySelector('#image');
@@ -164,4 +164,5 @@ form.addEventListener('click', function(evt) {
 });
 
 submitButtonProfile.addEventListener('click', handleProfileFormSubmit);
-submitButtonImage.addEventListener('click', handleImageFormSubmit);
+submitButtonImage.addEventListener('click', handleImageFormSubmit);*/
+
