@@ -153,15 +153,6 @@ addButton.addEventListener('click', function () {
   document.addEventListener("keydown", closePopupOnEsc);
 });
 
-/*const handleFormEvents = (submitButton) => {
-  if(!submitButton.classList.contains("button_action_create-inactive")) {
-    document.addEventListener("keydown", handleFormSubmitOnEnter);
-  } else {
-    document.removeEventListener("keydown", handleFormSubmitOnEnter);
-  }
-  //document.addEventListener("keydown", closePopupOnEsc);
-}*/
-
 closeButtons.forEach((button) => {
   button.addEventListener('click', closePopup);
 });
@@ -174,5 +165,3 @@ form.addEventListener('click', function(evt) {
 
 submitButtonProfile.addEventListener('click', handleProfileFormSubmit);
 submitButtonImage.addEventListener('click', handleImageFormSubmit);
-//document.addEventListener("keydown", handleFormSubmitOnEnter);
-//document.addEventListener("keydown", closePopupOnEsc);
