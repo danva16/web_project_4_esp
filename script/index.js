@@ -166,3 +166,12 @@ form.addEventListener('click', function(evt) {
 submitButtonProfile.addEventListener('click', handleProfileFormSubmit);
 submitButtonImage.addEventListener('click', handleImageFormSubmit);*/
 
+class Card {
+  constructor(data, templateSelector) {
+    this._name = data.name;
+    this._link = data.link;
+    this._templateSelector = templateSelector;
+  }
+
+  
+}
