@@ -173,5 +173,8 @@ class Card {
     this._templateSelector = templateSelector;
   }
 
-  
+  _getTemplate() {
+    const cardTemplate = document.querySelector(this._templateSelector).content.querySelector(".place").cloneNode(true);
+    return cardTemplate;
+  }
 }
