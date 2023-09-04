@@ -199,5 +199,17 @@ class Card {
       }
     })
   }
+
+  generateCard() {
+    this._element = this._getTemplate();
+
+    this._element.querySelector(".place__title").textContent = this._name;
+    this._element.querySelector(".place__image").setAttribute("src", this._link);
+    this._element.querySelector(".place__image").setAttribute("src", this._name);
+
+    this._setEventListeners(this._element);
+
+    return this._element;
+  }
 };
 
