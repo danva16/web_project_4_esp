@@ -191,7 +191,7 @@ class Card {
       evt.target.classList.toggle("button_action_like--active");
     })
 
-    cardElement.querySelector(".button_action_trash").addEventListener("click" () => {
+    cardElement.querySelector(".button_action_trash").addEventListener("click", () => {
       cardElement.remove();
       const index = initialCards.findIndex(card => !(card.name === this._name && card.link === this._link));
       if(index !== -1) {
