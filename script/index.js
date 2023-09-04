@@ -177,4 +177,27 @@ class Card {
     const cardTemplate = document.querySelector(this._templateSelector).content.querySelector(".place").cloneNode(true);
     return cardTemplate;
   }
-}
+
+  _setEventListeners(cardElement) {
+    cardElement.querySelector(".place__image").addEventListener("click", () => {
+    document.querySelector(".form").classList.add("form_mode_active");
+    document.querySelector(".popup").classList.add("popup_mode_active");
+    document.querySelector(".popup__image").setAttribute('src', this._link);
+    document.querySelector(".popup__title").setAttribute('alt', this._name);
+    document.querySelector(".popup__title").textContent = this._name;
+    })
+
+    cardElement.querySelector(".button_action_like").addEventListener("click", (evt) => {
+      evt.target.classList.toggle("button_action_like--active");
+    })
+
+    cardElement.querySelector(".button_action_trash").addEventListener("click" () => {
+      cardElement.remove();
+      const index = initialCards.findIndex(card => !(card.name === this._name && card.link === this._link));
+      if(index !== -1) {
+        initialCards.splice(index, 1);
+      }
+    })
+  }
+};
+
