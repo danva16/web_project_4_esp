@@ -166,6 +166,7 @@ form.addEventListener('click', function(evt) {
 submitButtonProfile.addEventListener('click', handleProfileFormSubmit);
 submitButtonImage.addEventListener('click', handleImageFormSubmit);*/
 
+
 class Card {
   constructor(data, templateSelector) {
     this._name = data.name;
@@ -180,11 +181,13 @@ class Card {
 
   _setEventListeners(cardElement) {
     cardElement.querySelector(".place__image").addEventListener("click", () => {
-    document.querySelector(".form").classList.add("form_mode_active");
-    document.querySelector(".popup").classList.add("popup_mode_active");
-    document.querySelector(".popup__image").setAttribute('src', this._link);
-    document.querySelector(".popup__title").setAttribute('alt', this._name);
-    document.querySelector(".popup__title").textContent = this._name;
+    const popupElement = document.querySelector(".popup");
+    const formElement = document.querySelector(".form");
+    formElement.classList.add("form_mode_active");
+    popupElement.classList.add("popup_mode_active");
+    popupElement.querySelector(".popup__image").setAttribute('src', this._link);
+    popupElement.querySelector(".popup__image").setAttribute('alt', this._name);
+    popupElement.querySelector(".popup__title").textContent = this._name;
     })
 
     cardElement.querySelector(".button_action_like").addEventListener("click", (evt) => {
@@ -205,7 +208,7 @@ class Card {
 
     this._element.querySelector(".place__title").textContent = this._name;
     this._element.querySelector(".place__image").setAttribute("src", this._link);
-    this._element.querySelector(".place__image").setAttribute("src", this._name);
+    this._element.querySelector(".place__image").setAttribute("alt", this._name);
 
     this._setEventListeners(this._element);
 
@@ -245,5 +248,6 @@ const cardTemplateSelector = '#place-template';
 initialCards.forEach(cardData => {
   const card = new Card(cardData, cardTemplateSelector);
   const cardElement = card.generateCard();
+  const places = document.querySelector(".places");
   places.prepend(cardElement);
 })
