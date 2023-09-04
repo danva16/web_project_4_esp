@@ -239,3 +239,11 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg"
   }
 ];
+
+const cardTemplateSelector = '#place-template';
+
+initialCards.forEach(cardData => {
+  const card = new Card(cardData, cardTemplateSelector);
+  const cardElement = card.generateCard();
+  places.prepend(cardElement);
+})
