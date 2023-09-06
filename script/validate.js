@@ -1,4 +1,4 @@
-const showInputError = (formElement, inputElement, errorMessage) => {
+/*const showInputError = (formElement, inputElement, errorMessage) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
 
   inputElement.classList.add("form__input_type_error");
@@ -69,4 +69,11 @@ const enableValidation = () => {
   });
 };
 
-enableValidation();
+enableValidation();*/
+
+class FormValidator {
+  constructor(config, formElement) {
+    this._config = config;
+    this._formElement = formElement;
+  }
+}
