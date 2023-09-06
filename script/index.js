@@ -244,10 +244,10 @@ const initialCards = [
 ];
 
 const cardTemplateSelector = '#place-template';
+const places = document.querySelector(".places");
 
 initialCards.forEach(cardData => {
   const card = new Card(cardData, cardTemplateSelector);
   const cardElement = card.generateCard();
-  const places = document.querySelector(".places");
   places.prepend(cardElement);
 })
