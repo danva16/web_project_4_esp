@@ -76,4 +76,11 @@ class FormValidator {
     this._config = config;
     this._formElement = formElement;
   }
+
+  _showInputError(inputElement, errorMessage) {
+    const errorElement = this._formElement.querySelector(`.${inputElement.id}-error`);
+    inputElement.classList.add("form__input_type_error");
+    errorElement.textContent = errorMessage;
+    errorElement.classList.add("form__input-error_active");
+  }
 }
