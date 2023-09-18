@@ -102,4 +102,14 @@ class FormValidator {
   _hasInvalidInput(inputList) {
     return inputList.some(inputElement => !inputElement.validity.valid);
   }
+
+  ._toggleButtonState(inputList, buttonElement) {
+    if(this._hasInvalidInput(inputList)) {
+      buttonElement.classList.add("button_action_create-inactive");
+    } else {
+      buttonElement.classList.remove("button_action_create-inactive");
+    }
+  }
+
+  
 }
