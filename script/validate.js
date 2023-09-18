@@ -90,4 +90,12 @@ class FormValidator {
     errorElement.classList.remove("form__input-error_active");
     errorElement.textContent = "";
   }
+
+  _checkInputValidity(inputElement) {
+    if(!inputElement.validity.valid) {
+      this._showInputError(inputElement, inputElement.validationMessage);
+    } else {
+      this._hideInputError(inputElement);
+    }
+  }
 }
