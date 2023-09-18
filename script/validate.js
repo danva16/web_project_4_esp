@@ -98,4 +98,8 @@ class FormValidator {
       this._hideInputError(inputElement);
     }
   }
+
+  _hasInvalidInput(inputList) {
+    return inputList.some(inputElement => !inputElement.validity.valid);
+  }
 }
