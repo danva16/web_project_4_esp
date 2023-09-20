@@ -135,12 +135,12 @@ class FormValidator {
 }
 
 const formValidatorConfig = {
-  formSelector: ".form";
-  inputSelector: ".form__input";
-  submitButtonSelector: ".button_action_create";
-  inactiveButtonClass: ".button_action_create-inactive";
-  inputErrorClass: ".form__input_type_error";
-  errorClass: ".form__input-error_active";
+  formSelector: ".form",
+  inputSelector: ".form__input",
+  submitButtonSelector: ".button_action_create",
+  inactiveButtonClass: ".button_action_create-inactive",
+  inputErrorClass: ".form__input_type_error",
+  errorClass: ".form__input-error_active"
 }
 
 const formElement = document.querySelector(".form");
