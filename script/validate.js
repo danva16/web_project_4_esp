@@ -133,3 +133,7 @@ class FormValidator {
     this._setEventListeners();
   }
 }
+
+const formElement = document.querySelector(".form");
+const FormValidator = new FormValidator(formValidatorConfig, formElement);
+formValidator.enableValidation();
