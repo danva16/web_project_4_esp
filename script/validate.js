@@ -122,7 +122,7 @@ class FormValidator {
         this._checkInputValidity(inputElement);
         this._toggleButtonState(inputList, buttonElement);
       });
-    }):
+    });
   }
 
   _enableValidation() {
