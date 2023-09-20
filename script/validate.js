@@ -103,7 +103,7 @@ class FormValidator {
     return inputList.some(inputElement => !inputElement.validity.valid);
   }
 
-  ._toggleButtonState(inputList, buttonElement) {
+  _toggleButtonState(inputList, buttonElement) {
     if(this._hasInvalidInput(inputList)) {
       buttonElement.classList.add("button_action_create-inactive");
     } else {
@@ -111,7 +111,7 @@ class FormValidator {
     }
   }
 
-  ._setEventListeners() {
+  _setEventListeners() {
     const inputList = Array.from(this._formElement.querySelectorAll(".form__input"));
     const buttonElement = this._formElement.querySelector(".button_action_create");
 
@@ -125,7 +125,7 @@ class FormValidator {
     }):
   }
 
-  ._enableValidation() {
+  _enableValidation() {
     this._formElement.addEventListener("submit", evt => {
       evt.preventDefault();
     });
