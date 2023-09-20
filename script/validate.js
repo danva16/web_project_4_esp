@@ -134,6 +134,15 @@ class FormValidator {
   }
 }
 
+const formValidatorConfig = {
+  formSelector: ".form";
+  inputSelector: ".form__input";
+  submitButtonSelector: ".button_action_create";
+  inactiveButtonClass: ".button_action_create-inactive";
+  inputErrorClass: ".form__input_type_error";
+  errorClass: ".form__input-error_active";
+}
+
 const formElement = document.querySelector(".form");
-const FormValidator = new FormValidator(formValidatorConfig, formElement);
+const formValidator = new FormValidator(formValidatorConfig, formElement);
 formValidator.enableValidation();
