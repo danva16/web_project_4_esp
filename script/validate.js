@@ -111,5 +111,17 @@ class FormValidator {
     }
   }
 
-  
+  ._setEventListeners() {
+    const inputList = Array.from(this._formElement.querySelectorAll(".form__input"));
+    const buttonElement = this._formElement.querySelector(".button_action_create");
+
+    this._toggleButtonState(inputList, buttonElement);
+
+    inputList.forEach(inputElement => {
+      inputElement.addEventListener("input", () => {
+        this._checkInputValidity(inputElement);
+        this._toggleButtonState(inputList, buttonElement);
+      });
+    }):
+  }
 }
