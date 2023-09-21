@@ -1,3 +1,5 @@
+import { buttonEdit, buttonAdd, form } from "./index";
+
 class FormValidator {
   constructor(config, formElement) {
     this._config = config;
@@ -52,12 +54,12 @@ class FormValidator {
       });
     });
 
-    document.querySelector(".button_action_edit").addEventListener("click", () => {
+    buttonEdit.addEventListener("click", () => {
       form.classList.add("form_mode_active");
       profileFormElement.classList.add("form__set_mode_active");
     })
 
-    document.querySelector(".button_action_add").addEventListener("click", () => {
+    buttonAdd.addEventListener("click", () => {
       form.classList.add("form_mode_active");
       imageFormElement.classList.add("form__set_mode_active");
     })
@@ -73,7 +75,7 @@ class FormValidator {
   }
 }
 
-const form = document.querySelector(".form");
+//const form = document.querySelector(".form");
 
 const profileFormConfig = {
   formSelector: ".form__set",
