@@ -1,4 +1,4 @@
-import { buttonEdit, buttonAdd, form } from "./index";
+import { imageFormElement, profileFormElement } from "./index";
 
 class FormValidator {
   constructor(config, formElement) {
@@ -53,16 +53,6 @@ class FormValidator {
         this._toggleButtonState();
       });
     });
-
-    buttonEdit.addEventListener("click", () => {
-      form.classList.add("form_mode_active");
-      profileFormElement.classList.add("form__set_mode_active");
-    })
-
-    buttonAdd.addEventListener("click", () => {
-      form.classList.add("form_mode_active");
-      imageFormElement.classList.add("form__set_mode_active");
-    })
   }
 
   enableValidation() {
@@ -86,7 +76,6 @@ const profileFormConfig = {
   errorClass: "form__input-error_active"
 }
 
-const profileFormElement = document.querySelector("#profile");
 const profileFormValidator = new FormValidator(profileFormConfig, profileFormElement);
 profileFormValidator.enableValidation();
 
@@ -99,6 +88,5 @@ const imageFormConfig = {
   errorClass: "form__input-error_active"
 }
 
-const imageFormElement = document.querySelector("#image");
 const imageFormValidator = new FormValidator(imageFormConfig, imageFormElement);
 imageFormValidator.enableValidation();

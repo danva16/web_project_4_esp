@@ -3,6 +3,8 @@ const buttonEdit = document.querySelector(".button_action_edit");
 const buttonAdd = document.querySelector(".button_action_add");
 const popupElement = document.querySelector(".popup");
 const places = document.querySelector(".places");
+const profileFormElement = document.querySelector("#profile");
+const imageFormElement = document.querySelector("#image");
 
 const initialCards = [
   {
@@ -31,4 +33,4 @@ const initialCards = [
   }
 ];
 
-export { form, buttonEdit, buttonAdd, popupElement, places, initialCards };
+export { form, buttonEdit, buttonAdd, popupElement, places, initialCards, profileFormElement, imageFormElement };
