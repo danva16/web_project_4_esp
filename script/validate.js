@@ -2,19 +2,21 @@ class FormValidator {
   constructor(config, formElement) {
     this._config = config;
     this._formElement = formElement;
+    this._inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
+    this._buttonElement = formElement.querySelector(config.submitButtonSelector);
   }
 
   _showInputError(inputElement, errorMessage) {
     const errorElement = this._formElement.querySelector(`.${inputElement.id}-error`);
-    inputElement.classList.add("form__input_type_error");
+    inputElement.classList.add(this._config.inputErrorClass);
     errorElement.textContent = errorMessage;
-    errorElement.classList.add("form__input-error_active");
+    errorElement.classList.add(this._config.errorClass);
   }
 
   _hideInputError(inputElement) {
     const errorElement = this._formElement.querySelector(`.${inputElement.id}-error`);
-    inputElement.classList.remove("form__input_type_error");
-    errorElement.classList.remove("form__input-error_active");
+    inputElement.classList.remove(this._config.inputErrorClass);
+    errorElement.classList.remove(this._config.errorClass);
     errorElement.textContent = "";
   }
 
@@ -26,50 +28,75 @@ class FormValidator {
     }
   }
 
-  _hasInvalidInput(inputList) {
-    return inputList.some(inputElement => !inputElement.validity.valid);
+  _hasInvalidInput() {
+    return this._inputList.some((inputElement) => {
+      return !inputElement.validity.valid;
+    });
   }
 
-  _toggleButtonState(inputList, buttonElement) {
-    if(this._hasInvalidInput(inputList)) {
-      buttonElement.classList.add("button_action_create-inactive");
+  _toggleButtonState() {
+    if(this._hasInvalidInput()) {
+      this._buttonElement.classList.add(this._config.inactiveButtonClass);
     } else {
-      buttonElement.classList.remove("button_action_create-inactive");
+      this._buttonElement.classList.remove(this._config.inactiveButtonClass);
     }
   }
 
   _setEventListeners() {
-    const inputList = Array.from(this._formElement.querySelectorAll(".form__input"));
-    const buttonElement = this._formElement.querySelector(".button_action_create");
+    this._toggleButtonState();
 
-    this._toggleButtonState(inputList, buttonElement);
-
-    inputList.forEach(inputElement => {
+    this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
         this._checkInputValidity(inputElement);
-        this._toggleButtonState(inputList, buttonElement);
+        this._toggleButtonState();
       });
     });
+
+    document.querySelector(".button_action_edit").addEventListener("click", () => {
+      form.classList.add("form_mode_active");
+      profileFormElement.classList.add("form__set_mode_active");
+    })
+
+    document.querySelector(".button_action_add").addEventListener("click", () => {
+      form.classList.add("form_mode_active");
+      imageFormElement.classList.add("form__set_mode_active");
+    })
   }
 
   enableValidation() {
-    this._formElement.addEventListener("submit", evt => {
+    this._formElement.addEventListener("submit", (evt) => {
       evt.preventDefault();
     });
 
     this._setEventListeners();
+    this._toggleButtonState();
   }
 }
 
-const formValidatorConfig = {
-  formSelector: ".form",
+const form = document.querySelector(".form");
+
+const profileFormConfig = {
+  formSelector: ".form__set",
   inputSelector: ".form__input",
-  submitButtonSelector: ".button_action_create",
+  submitButtonSelector: "#submit-profile",
   inactiveButtonClass: "button_action_create-inactive",
   inputErrorClass: "form__input-error",
   errorClass: "form__input-error_active"
 }
 
-const formElement = document.querySelector(".form");
-const formValidator = new FormValidator(formValidatorConfig, formElement);
-formValidator.enableValidation();
+const profileFormElement = document.querySelector("#profile");
+const profileFormValidator = new FormValidator(profileFormConfig, profileFormElement);
+profileFormValidator.enableValidation();
+
+const imageFormConfig = {
+  formSelector: ".form__set",
+  inputSelector: ".form__input",
+  submitButtonSelector: "#submit-image",
+  inactiveButtonClass: "button_action_create-inactive",
+  inputErrorClass: "form__input-error",
+  errorClass: "form__input-error_active"
+}
+
+const imageFormElement = document.querySelector("#image");
+const imageFormValidator = new FormValidator(imageFormConfig, imageFormElement);
+imageFormValidator.enableValidation();

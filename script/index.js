@@ -182,7 +182,6 @@ class Card {
   _setEventListeners(cardElement) {
     cardElement.querySelector(".place__image").addEventListener("click", () => {
     const popupElement = document.querySelector(".popup");
-    const formElement = document.querySelector(".form");
     formElement.classList.add("form_mode_active");
     popupElement.classList.add("popup_mode_active");
     popupElement.querySelector(".popup__image").setAttribute('src', this._link);
@@ -214,7 +213,7 @@ class Card {
 
     return this._element;
   }
-};
+}
 
 const initialCards = [
   {
@@ -243,6 +242,7 @@ const initialCards = [
   }
 ];
 
+const formElement = document.querySelector(".form");
 const cardTemplateSelector = '#place-template';
 const places = document.querySelector(".places");
 
