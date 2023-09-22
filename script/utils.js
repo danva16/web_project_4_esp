@@ -65,3 +65,9 @@ function handleFormSubmitOnEnter(evt) {
     evt.preventDefault();
 }
 }
+
+form.addEventListener('click', function(evt) {
+  if(!profileFormElement.contains(evt.target) && !imageFormElement.contains(evt.target)) {
+    closePopup();
+  }
+});
