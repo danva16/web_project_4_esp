@@ -1,6 +1,8 @@
 const form = document.querySelector(".form");
 const buttonEdit = document.querySelector(".button_action_edit");
 const buttonAdd = document.querySelector(".button_action_add");
+const submitButtonProfile = document.querySelector('#submit-profile');
+const submitButtonImage = document.querySelector('#submit-image');
 const popupElement = document.querySelector(".popup");
 const places = document.querySelector(".places");
 const profileFormElement = document.querySelector("#profile");
@@ -38,4 +40,4 @@ const initialCards = [
 ];
 
 export { form, buttonEdit, buttonAdd, popupElement, places, initialCards, profileFormElement, imageFormElement, name, employment,
-   nameInput, employmentInput };
+   nameInput, employmentInput, submitButtonImage, submitButtonProfile };
