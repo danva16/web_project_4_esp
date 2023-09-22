@@ -1,5 +1,6 @@
 import { buttonEdit, buttonAdd, form, profileFormElement, imageFormElement, name, employment, nameInput,
  employmentInput, popupElement, submitButtonImage, submitButtonProfile, closeButtons } from "./index.js";
+ import { handleImageFormSubmit } from "./Card.js";
 
 buttonEdit.addEventListener("click", () => {
   form.classList.add("form_mode_active");
@@ -21,13 +22,14 @@ closeButtons.forEach(button => {
 })
 
 submitButtonProfile.addEventListener("click", handleProfileFormSubmit);
+submitButtonImage.addEventListener("click", handleImageFormSubmit);
 
 function openformProfile() {
   nameInput.value = name.textContent;
   employmentInput.value = employment.textContent;
 }
 
-function closePopup() {
+export function closePopup() {
   form.classList.remove("form_mode_active");
   profileFormElement.classList.remove("form__set_mode_active");
   imageFormElement.classList.remove("form__set_mode_active");

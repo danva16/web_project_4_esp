@@ -167,7 +167,7 @@ submitButtonProfile.addEventListener('click', handleProfileFormSubmit);
 submitButtonImage.addEventListener('click', handleImageFormSubmit);*/
 
 import { popupElement, form, places, initialCards } from "./index.js";
-import { closePopupOnEsc } from "./utils.js";
+import { closePopupOnEsc, closePopup } from "./utils.js";
 
 class Card {
   constructor(data, templateSelector) {
@@ -224,3 +224,21 @@ initialCards.forEach(cardData => {
   const cardElement = card.generateCard();
   places.prepend(cardElement);
 })
+
+export function handleImageFormSubmit(evt) {
+  evt.preventDefault();
+
+  const newCardData = {
+    name: document.querySelector("#title-input").value,
+    link: document.querySelector("#image-input").value
+  };
+
+  const newCard = new Card(newCardData, cardTemplateSelector);
+  const newCardElement = newCard.generateCard();
+  places.prepend(newCardElement);
+
+  document.querySelector("#title-input").value = "";
+  document.querySelector("#image-input").value = "";
+
+  closePopup();
+}
