@@ -12,6 +12,8 @@ buttonAdd.addEventListener("click", () => {
   imageFormElement.classList.add("form__set_mode_active");
 })
 
+submitButtonProfile.addEventListener("click", handleProfileFormSubmit);
+
 function openformProfile() {
   nameInput.value = name.textContent;
   employmentInput.value = employment.textContent;
@@ -22,6 +24,17 @@ function closePopup() {
   profileFormElement.classList.remove("form__set_mode_active");
   imageFormElement.classList.remove("form__set_mode_active");
   popupElement.classList.remove("popup_mode_active")
+}
+
+function handleProfileFormSubmit(evt) {
+  evt.preventDefault();
+
+  const nameValue = nameInput.value;
+  const employmentValue = employmentInput.value;
+
+  name.textContent = nameValue;
+  employment.textContent = employmentValue;
+  closePopup();
 }
 
 function closePopupOnEsc(evt) {
