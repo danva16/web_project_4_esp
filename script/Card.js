@@ -167,6 +167,7 @@ submitButtonProfile.addEventListener('click', handleProfileFormSubmit);
 submitButtonImage.addEventListener('click', handleImageFormSubmit);*/
 
 import { popupElement, form, places, initialCards } from "./index.js";
+import { closePopupOnEsc } from "./utils.js";
 
 class Card {
   constructor(data, templateSelector) {
@@ -182,12 +183,12 @@ class Card {
 
   _setEventListeners(cardElement) {
     cardElement.querySelector(".place__image").addEventListener("click", () => {
-    //const popupElement = document.querySelector(".popup");
     form.classList.add("form_mode_active");
     popupElement.classList.add("popup_mode_active");
     popupElement.querySelector(".popup__image").setAttribute('src', this._link);
     popupElement.querySelector(".popup__image").setAttribute('alt', this._name);
     popupElement.querySelector(".popup__title").textContent = this._name;
+    document.addEventListener("keydown", closePopupOnEsc);
     })
 
     cardElement.querySelector(".button_action_like").addEventListener("click", (evt) => {
@@ -216,9 +217,7 @@ class Card {
   }
 }
 
-//const formElement = document.querySelector(".form");
 const cardTemplateSelector = '#place-template';
-//const places = document.querySelector(".places");
 
 initialCards.forEach(cardData => {
   const card = new Card(cardData, cardTemplateSelector);

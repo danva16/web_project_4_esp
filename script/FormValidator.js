@@ -65,8 +65,6 @@ class FormValidator {
   }
 }
 
-//const form = document.querySelector(".form");
-
 const profileFormConfig = {
   formSelector: ".form__set",
   inputSelector: ".form__input",
