@@ -1,5 +1,5 @@
 import { buttonEdit, buttonAdd, form, profileFormElement, imageFormElement, name, employment, nameInput,
- employmentInput, popupElement, submitButtonImage, submitButtonProfile } from "./index.js";
+ employmentInput, popupElement, submitButtonImage, submitButtonProfile, closeButtons } from "./index.js";
 
 buttonEdit.addEventListener("click", () => {
   form.classList.add("form_mode_active");
@@ -10,6 +10,10 @@ buttonEdit.addEventListener("click", () => {
 buttonAdd.addEventListener("click", () => {
   form.classList.add("form_mode_active");
   imageFormElement.classList.add("form__set_mode_active");
+})
+
+closeButtons.forEach(button => {
+  button.addEventListener("click", closePopup);
 })
 
 submitButtonProfile.addEventListener("click", handleProfileFormSubmit);
