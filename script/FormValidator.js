@@ -1,4 +1,4 @@
-import { imageFormElement, profileFormElement } from "./index";
+import { imageFormElement, profileFormElement } from "./index.js";
 
 class FormValidator {
   constructor(config, formElement) {

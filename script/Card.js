@@ -166,7 +166,7 @@ form.addEventListener('click', function(evt) {
 submitButtonProfile.addEventListener('click', handleProfileFormSubmit);
 submitButtonImage.addEventListener('click', handleImageFormSubmit);*/
 
-import { popupElement, form, places, initialCards } from "./index";
+import { popupElement, form, places, initialCards } from "./index.js";
 
 class Card {
   constructor(data, templateSelector) {

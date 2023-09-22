@@ -5,6 +5,10 @@ const popupElement = document.querySelector(".popup");
 const places = document.querySelector(".places");
 const profileFormElement = document.querySelector("#profile");
 const imageFormElement = document.querySelector("#image");
+const name = document.querySelector('.profile__username');
+const employment = document.querySelector('.profile__useremployment');
+const nameInput = profileFormElement.querySelector('input[placeholder="Nombre"]');
+const employmentInput = profileFormElement.querySelector('input[placeholder="Acerca de mí"]');
 
 const initialCards = [
   {
@@ -33,4 +37,5 @@ const initialCards = [
   }
 ];
 
-export { form, buttonEdit, buttonAdd, popupElement, places, initialCards, profileFormElement, imageFormElement };
+export { form, buttonEdit, buttonAdd, popupElement, places, initialCards, profileFormElement, imageFormElement, name, employment,
+   nameInput, employmentInput };
