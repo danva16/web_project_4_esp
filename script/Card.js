@@ -15,9 +15,9 @@ export class Card {
 
   _setEventListeners(cardElement) {
     cardElement.querySelector(".place__image").addEventListener("click", () => {
-    const form = document.querySelector(".form");
+    const formElement = document.querySelector(".form");
     const popupElement = document.querySelector(".popup");
-    form.classList.add("form_mode_active");
+    formElement.classList.add("form_mode_active");
     popupElement.classList.add("popup_mode_active");
     popupElement.querySelector(".popup__image").setAttribute('src', this._link);
     popupElement.querySelector(".popup__image").setAttribute('alt', this._name);

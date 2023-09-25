@@ -1,7 +1,7 @@
-import { profileFormElement, imageFormElement, name, employment, nameInput,
- employmentInput, popupElement, handleImageFormSubmit } from "./index.js";
+import { profileFormElement, imageFormElement, nameElement, employmentElement, nameInput,
+ employmentInput, popupElement, submitImageForm } from "./index.js";
 
- const form = document.querySelector(".form");
+ const formElement = document.querySelector(".form");
  const buttonEdit = document.querySelector(".button_action_edit");
  const buttonAdd = document.querySelector(".button_action_add");
  const closeButtons = document.querySelectorAll(".button_action_close");
@@ -9,17 +9,17 @@ import { profileFormElement, imageFormElement, name, employment, nameInput,
  const submitButtonImage = document.querySelector('#submit-image');
 
  buttonEdit.addEventListener("click", () => {
-  form.classList.add("form_mode_active");
+  formElement.classList.add("form_mode_active");
   profileFormElement.classList.add("form__set_mode_active");
   openformProfile();
-  document.addEventListener("keydown", handleFormSubmitOnEnter);
+  document.addEventListener("keydown", submitFormOnEnter);
   document.addEventListener("keydown", closePopupOnEsc);
 })
 
 buttonAdd.addEventListener("click", () => {
-  form.classList.add("form_mode_active");
+  formElement.classList.add("form_mode_active");
   imageFormElement.classList.add("form__set_mode_active");
-  document.addEventListener("keydown", handleFormSubmitOnEnter);
+  document.addEventListener("keydown", submitFormOnEnter);
   document.addEventListener("keydown", closePopupOnEsc);
 })
 
@@ -27,31 +27,31 @@ closeButtons.forEach(button => {
   button.addEventListener("click", closePopup);
 })
 
-submitButtonProfile.addEventListener("click", handleProfileFormSubmit);
-submitButtonImage.addEventListener("click", handleImageFormSubmit);
+submitButtonProfile.addEventListener("click", submitProfileForm);
+submitButtonImage.addEventListener("click", submitImageForm);
 
 function openformProfile() {
-  nameInput.value = name.textContent;
-  employmentInput.value = employment.textContent;
+  nameInput.value = nameElement.textContent;
+  employmentInput.value = employmentElement.textContent;
 }
 
 export function closePopup() {
-  form.classList.remove("form_mode_active");
+  formElement.classList.remove("form_mode_active");
   profileFormElement.classList.remove("form__set_mode_active");
   imageFormElement.classList.remove("form__set_mode_active");
   popupElement.classList.remove("popup_mode_active");
-  document.removeEventListener("keydown", handleFormSubmitOnEnter);
+  document.removeEventListener("keydown", submitFormOnEnter);
   document.removeEventListener("keydown", closePopupOnEsc);
 }
 
-function handleProfileFormSubmit(evt) {
+function submitProfileForm(evt) {
   evt.preventDefault();
 
   const nameValue = nameInput.value;
   const employmentValue = employmentInput.value;
 
-  name.textContent = nameValue;
-  employment.textContent = employmentValue;
+  nameElement.textContent = nameValue;
+  employmentElement.textContent = employmentValue;
   closePopup();
 }
 
@@ -61,18 +61,18 @@ export function closePopupOnEsc(evt) {
   }
 }
 
-function handleFormSubmitOnEnter(evt) {
+function submitFormOnEnter(evt) {
   if (evt.key === 'Enter' || evt.keyCode === 13) {
     if (imageFormElement.classList.contains('form__set_mode_active') && !submitButtonImage.classList.contains('button_action_create-inactive')) {
-      handleImageFormSubmit(evt);
+      submitImageForm(evt);
     } else if (profileFormElement.classList.contains('form__set_mode_active') && !submitButtonProfile.classList.contains('button_action_create-inactive')) {
-      handleProfileFormSubmit(evt);
+      submitProfileForm(evt);
     }
     evt.preventDefault();
 }
 }
 
-form.addEventListener('click', function(evt) {
+formElement.addEventListener('click', function(evt) {
   if(!profileFormElement.contains(evt.target) && !imageFormElement.contains(evt.target)) {
     closePopup();
   }

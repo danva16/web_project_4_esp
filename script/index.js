@@ -4,11 +4,11 @@ import { closePopup } from "./utils.js";
 
 const cardTemplateSelector = "#place-template";
 const popupElement = document.querySelector(".popup");
-const places = document.querySelector(".places");
+const placesElement = document.querySelector(".places");
 const profileFormElement = document.querySelector("#profile");
 const imageFormElement = document.querySelector("#image");
-const name = document.querySelector('.profile__username');
-const employment = document.querySelector('.profile__useremployment');
+const nameElement = document.querySelector('.profile__username');
+const employmentElement = document.querySelector('.profile__useremployment');
 const nameInput = profileFormElement.querySelector('input[placeholder="Nombre"]');
 const employmentInput = profileFormElement.querySelector('input[placeholder="Acerca de mí"]');
 
@@ -66,10 +66,10 @@ imageFormValidator.enableValidation();
 initialCards.forEach(cardData => {
   const card = new Card(cardData, cardTemplateSelector);
   const cardElement = card.generateCard();
-  places.prepend(cardElement);
+  placesElement.prepend(cardElement);
 })
 
-export function handleImageFormSubmit(evt) {
+export function submitImageForm(evt) {
   evt.preventDefault();
 
   const newCardData = {
@@ -79,7 +79,7 @@ export function handleImageFormSubmit(evt) {
 
   const newCard = new Card(newCardData, cardTemplateSelector);
   const newCardElement = newCard.generateCard();
-  places.prepend(newCardElement);
+  placesElement.prepend(newCardElement);
 
   document.querySelector("#title-input").value = "";
   document.querySelector("#image-input").value = "";
@@ -87,5 +87,5 @@ export function handleImageFormSubmit(evt) {
   closePopup();
 }
 
-export { popupElement, initialCards, profileFormElement, imageFormElement, name, employment,
- nameInput, employmentInput, cardTemplateSelector, places };
+export { popupElement, initialCards, profileFormElement, imageFormElement, nameElement, employmentElement,
+ nameInput, employmentInput, cardTemplateSelector, placesElement };
