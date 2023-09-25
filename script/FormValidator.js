@@ -1,6 +1,4 @@
-import { imageFormElement, profileFormElement } from "./index.js";
-
-class FormValidator {
+export class FormValidator {
   constructor(config, formElement) {
     this._config = config;
     this._formElement = formElement;
@@ -64,27 +62,3 @@ class FormValidator {
     this._toggleButtonState();
   }
 }
-
-const profileFormConfig = {
-  formSelector: ".form__set",
-  inputSelector: ".form__input",
-  submitButtonSelector: "#submit-profile",
-  inactiveButtonClass: "button_action_create-inactive",
-  inputErrorClass: "form__input-error",
-  errorClass: "form__input-error_active"
-}
-
-const profileFormValidator = new FormValidator(profileFormConfig, profileFormElement);
-profileFormValidator.enableValidation();
-
-const imageFormConfig = {
-  formSelector: ".form__set",
-  inputSelector: ".form__input",
-  submitButtonSelector: "#submit-image",
-  inactiveButtonClass: "button_action_create-inactive",
-  inputErrorClass: "form__input-error",
-  errorClass: "form__input-error_active"
-}
-
-const imageFormValidator = new FormValidator(imageFormConfig, imageFormElement);
-imageFormValidator.enableValidation();

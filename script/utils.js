@@ -1,8 +1,14 @@
-import { buttonEdit, buttonAdd, form, profileFormElement, imageFormElement, name, employment, nameInput,
- employmentInput, popupElement, submitButtonImage, submitButtonProfile, closeButtons } from "./index.js";
- import { handleImageFormSubmit } from "./Card.js";
+import { profileFormElement, imageFormElement, name, employment, nameInput,
+ employmentInput, popupElement, handleImageFormSubmit } from "./index.js";
 
-buttonEdit.addEventListener("click", () => {
+ const form = document.querySelector(".form");
+ const buttonEdit = document.querySelector(".button_action_edit");
+ const buttonAdd = document.querySelector(".button_action_add");
+ const closeButtons = document.querySelectorAll(".button_action_close");
+ const submitButtonProfile = document.querySelector('#submit-profile');
+ const submitButtonImage = document.querySelector('#submit-image');
+
+ buttonEdit.addEventListener("click", () => {
   form.classList.add("form_mode_active");
   profileFormElement.classList.add("form__set_mode_active");
   openformProfile();
