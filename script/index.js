@@ -17,7 +17,7 @@ const profileFormConfig = {
   inputSelector: ".form__input",
   submitButtonSelector: "#submit-profile",
   inactiveButtonClass: "button_action_create-inactive",
-  inputErrorClass: "form__input-error",
+  inputErrorClass: "form__input_type-error",
   errorClass: "form__input-error_active"
 }
 
@@ -26,7 +26,7 @@ const imageFormConfig = {
   inputSelector: ".form__input",
   submitButtonSelector: "#submit-image",
   inactiveButtonClass: "button_action_create-inactive",
-  inputErrorClass: "form__input-error",
+  inputErrorClass: "form__input_type-error",
   errorClass: "form__input-error_active"
 }
 
